@@ -16,14 +16,14 @@ from lasagne.nonlinearities import softmax
 from lasagne.nonlinearities import LeakyRectify
 
 BATCH_SIZE = 256
-MAX_EPOCHS_SPACE = 150 # exponentially stretch the learning rates
-MAX_EPOCHS = 3 # actual rounds of running 
+MAX_EPOCHS_SPACE = 150 # total space the decreasing learning rates and momentum will be stretched along
+MAX_EPOCHS = 140       # actual rounds of running 
 LEARNING_RATE_START = 0.018 
 LEARNING_RATE_END = 0.005
 MOMENTUM_START = 0.9
 MOMENTUM_END = 0.9
 
-# using exponential decreasing rate 
+# using exponential decreasing rate and momentum
 LEARNING_RATE_START_LOG = np.log(LEARNING_RATE_START) 
 LEARNING_RATE_END_LOG = np.log(LEARNING_RATE_END)
 MOMENTUM_START_LOG = np.log(MOMENTUM_START) 
@@ -31,7 +31,7 @@ MOMENTUM_END_LOG = np.log(MOMENTUM_END)
 
 INPUT_DIM = 93
 NUM_OUTPUT = 9
-EVAL_SIZE = 0.0 #set to 0.2 for CV; set to 0.0 for submissions 
+EVAL_SIZE = 0.2 #set to 0.2 for CV; set to 0.0 for submissions 
 
 NUM_HIDDEN_UNITS_1 = 1000
 NUM_HIDDEN_UNITS_2 = 500
@@ -105,11 +105,11 @@ myNN = NeuralNet(
     l1_lambda = L1_LAMBDA
     )
     
-### main process ###
+### main process starts here ###
 df = pd.read_csv('train.csv') # reading data ... 
 df_test = pd.read_csv('test.csv')
 
-# processing data 
+# pre-processing data 
 df.target = df.target.apply(lambda x: x.split("_", 1)[1]) # convert class_x -> x
 df.target = df.target.astype(np.int32)
 df.target = df.target - 1
