@@ -1,4 +1,7 @@
 # kaggle-Otto-Group-Competition-NNs-Model-
+The link to this Kaggle otto group competition is below:
+https://www.kaggle.com/c/otto-group-product-classification-challenge
+
 This is our team best Neural Network model we use to combine with xgb model. The single NN model can give a leaderboard of around 0.43 (logloss), and a simple linear combination of 10NNs will give around 0.426. 
 
 The features used for this model including the followings:
