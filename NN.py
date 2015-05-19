@@ -2,7 +2,7 @@
 Build a two-layer neural network where a dropout is connected
 to each layer. Can use exponential decreasing learning rate 
 by adding in function 'on_epoch_finished'. L2 and L1 can also 
-be added provided that source code supported such function
+be added provided that source code supports such feature
 '''
 import theano
 import numpy as np
