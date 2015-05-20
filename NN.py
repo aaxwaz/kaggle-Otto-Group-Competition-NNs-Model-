@@ -1,8 +1,8 @@
 '''
-Build a two-layer neural network where a dropout is connected
-to each layer. Can use exponential decreasing learning rate 
-by adding in function 'on_epoch_finished'. L2 and L1 can also 
-be added provided that source code supports such feature
+Build a two-layer neural network for Kaggle Otto Group Competition. 
+Can use exponential decreasing learning rate by adding in function 
+'on_epoch_finished'. L2 and L1 can also be added provided that source 
+code (nolearn) supports such feature
 '''
 import theano
 import numpy as np
@@ -36,8 +36,8 @@ EVAL_SIZE = 0.2 #set to 0.2 for CV; set to 0.0 for submissions
 NUM_HIDDEN_UNITS_1 = 1000
 NUM_HIDDEN_UNITS_2 = 500
 INPUT_DROPOUT_P = 0.15
-HIDDEN1_DROPOUT_P = 0.25
-HIDDEN2_DROPOUT_P = 0.25
+HIDDEN1_DROPOUT_P = 0.30
+HIDDEN2_DROPOUT_P = 0.30
 L2_LAMBDA = 0.0000185
 L1_LAMBDA = 0.0
 
