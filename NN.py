@@ -60,7 +60,7 @@ class AdjustVariable(object):
 
 myNN = NeuralNet(
     ''' Contruct a two-hidden layers Neural Nets. With dropout ratio as 
-    0.15, 0.25, 0.25. Using default ReLU as nonlinearities for each 
+    0.15, 0.3, 0.3. Using default ReLU as nonlinearities for each 
     activation, and softmax for output. Using decreasing learning rate
     as well as momentum. L1 and L2 are used provided source code has such
     features implemented
